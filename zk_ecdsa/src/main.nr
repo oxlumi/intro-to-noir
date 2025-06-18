@@ -7,7 +7,12 @@ fn main(
     hashed_message: [u8; 32], 
     expected_address: Field,
 ) {
-    let address: Field= ecrecover::ecrecover(pub_key_x, pub_key_y, signature,hashed_message);
+
+    assert(pub_key_y[31] >= 0, "pub_key_y is not in the upper half of the curve");
+
+    let address = ecrecover::ecrecover(pub_key_x, pub_key_y, signature,hashed_message);
+
+    assert(address != 0, "Address is zero");
     assert(address == expected_address, "Address does not match");
 }
 
