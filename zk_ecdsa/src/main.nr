@@ -8,7 +8,7 @@ fn main(
     expected_address: Field,
 ) {
 
-    assert(pub_key_y[31] >= 0, "pub_key_y is not in the upper half of the curve");
+    assert(pub_key_y[31] >= 0, "pub_key_y is not in the upper half of the curve"); 
 
     let address = ecrecover::ecrecover(pub_key_x, pub_key_y, signature,hashed_message);
 

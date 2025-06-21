@@ -1,0 +1,3 @@
+[submodule "zk_panagram/contracts/lib/openzeppelin-contracts"]
+	path = zk_panagram/contracts/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
